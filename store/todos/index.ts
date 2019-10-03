@@ -9,6 +9,7 @@ export const state = (): S => ({
 //
 export const getters: Getters<S, G> = {
   todosCount(state, getters, rootState, rootgetters) {
+    // @ts-ignore TS2532: Object is possibly 'undefined'
     const dummy = getters.doneCount
     return state.todos.length + dummy - dummy
   },
