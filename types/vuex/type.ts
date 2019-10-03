@@ -6,9 +6,9 @@ declare module 'vuex' {
   type Getters<S, G> = {
     [K in keyof G]: (
       state: S,
-      getters: G,
-      rootState: RootState,
-      rootGetters: RootGetters
+      getters?: G,
+      rootState?: RootState,
+      rootGetters?: RootGetters
     ) => G[K]
   }
   // ______________________________________________________
