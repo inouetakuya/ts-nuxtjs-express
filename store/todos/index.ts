@@ -9,7 +9,8 @@ export const state = (): S => ({
 //
 export const getters: Getters<S, G> = {
   todosCount(state, getters, rootState, rootgetters) {
-    return state.todos.length
+    const dummy = getters.doneCount
+    return state.todos.length + dummy - dummy
   },
   doneCount(state) {
     return state.todos.filter(todo => todo.done).length
